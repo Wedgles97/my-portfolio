@@ -3,14 +3,13 @@
   --header-height: 4.5rem;
 
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(266, 89%, 61%);
   --text-color: hsl(252, 26%, 3%);
   --body-color: hsl(0, 0%, 96%);
   --line-color: hsla(0, 0%, 10%, 0.4);
+  --white-color: hsl(0, 0%, 100%);
 
   /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Roboto", sans-serif;
   --biggest-font-size: 2.5rem;
   --h1-font-size: 1.75rem;
@@ -58,6 +57,14 @@ html {
 body {
   font-family: var(--body-font);
   background-color: var(--body-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: var(--text-color);
 }
 
 ul {
@@ -186,8 +193,8 @@ button {
 
 .nav__logo {
   font-size: 1.31rem;
-  font-weight: 700;
   color: var(--text-color);
+  font-weight: var(--font-bold);
   cursor: pointer;
 }
 
@@ -210,11 +217,6 @@ button {
     backdrop-filter: blur(8px);
     transition: top 0.7s;
   }
-}
-
-.nav__close,
-.nav__link {
-  color: var(--text-color);
 }
 
 .nav__title {
@@ -259,6 +261,7 @@ button {
 
 .nav__link {
   position: relative;
+  color: var(--white-color);
   font-size: var(--h3-font-size);
   font-weight: var(--font-semi-bold);
   transition: color 0.3s;
@@ -288,16 +291,15 @@ button {
 
 .nav__item:nth-child(4) .nav__link {
   display: inline-block;
-  text-align: center;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   border-radius: 50rem;
-  border: 0.1rem solid #9245f5;
+  border: 0.1rem solid var(--first-color);
   transition: all 0.2s ease-in;
 }
 
 .nav__item:nth-child(4) .nav__link:hover {
-  background-color: #9245f5;
-  color: var(--text-color);
+  background-color: var(--first-color);
+  color: var(--white-color);
 }
 
 .nav__item:nth-child(4) .nav__link::before,
@@ -314,7 +316,7 @@ button {
   width: 24px;
   border-radius: 3px;
   height: 3px;
-  background-color: #9245f5;
+  background-color: var(--first-color);
   transition: all 0.3s;
   position: relative;
 }
@@ -450,7 +452,6 @@ button .sun {
 
 .home__name {
   font-size: var(--biggest-font-size);
-  color: var(--text-color);
   text-align: center;
 }
 
@@ -497,11 +498,11 @@ button .sun {
   padding: 6px;
   display: grid;
   place-items: center;
-  transition: background-color 0.3s;
+  transition: transform 0.3s;
 }
 
 .home__social-link:hover {
-  background-color: black;
+  transform: scale(1.1);
 }
 
 .home__info {
@@ -510,7 +511,6 @@ button .sun {
 
 .home__description {
   text-align: center;
-  color: var(--text-color);
   margin-bottom: 1rem;
 }
 
@@ -522,37 +522,33 @@ button .sun {
   );
 }
 
-.home__scroll {
-  display: block;
-  width: max-content;
-  margin: 0 auto;
-}
-
 .arrow-down {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.75rem;
+  font-size: var(--h1-font-size);
   gap: 0.25rem;
   color: var(--line-color);
   cursor: pointer;
   overflow: hidden;
 }
+
+.arrow-down i {
+  animation: scroll-down 2s infinite ease-in-out;
+  animation-fill-mode: backwards;
+}
+
 .arrow-down i:nth-child(1) {
-  animation: scroll-down 2s infinite ease-in-out;
   animation-delay: 0.3s;
-  animation-fill-mode: backwards;
 }
+
 .arrow-down i:nth-child(2) {
-  animation: scroll-down 2s infinite ease-in-out;
   animation-delay: 0.6s;
-  animation-fill-mode: backwards;
 }
+
 .arrow-down i:nth-child(3) {
-  animation: scroll-down 2s infinite ease-in-out;
   animation-delay: 0.9s;
-  animation-fill-mode: backwards;
 }
 
 /* Animate scroll icon */
@@ -580,16 +576,13 @@ button .sun {
 
 .skills__name {
   font-weight: var(--font-regular);
-  font-size: --h2-font-size;
-  line-height: 120%;
-  letter-spacing: -0.02em;
-  color: var(--text-color);
+  font-size: var(--h2-font-size);
 }
 
 .skills__name::before,
 .skills__name::after {
   margin: 0 0.5rem;
-  color: #9245f5;
+  color: var(--first-color);
   font-weight: var(--font-bold);
 }
 
@@ -603,12 +596,21 @@ button .sun {
 
 .skills__list {
   display: flex;
+  color: var(--text-color);
   flex-direction: row;
   justify-content: center;
-  color: var(--text-color);
   column-gap: 2.5rem;
   font-size: 32px;
 }
+
+.skills__item {
+  transition: transform 0.3s;
+}
+
+.skills__item:hover {
+  transform: scale(1.2);
+}
+
 /*=============== ABOUT ===============*/
 
 /*=============== PROJECTS ===============*/
@@ -620,6 +622,24 @@ button .sun {
 /* Move label up & sticky label */
 
 /*=============== FOOTER ===============*/
+.footer {
+  border-top: 1px solid var(--line-color);
+}
+
+.footer__container {
+  padding-block: 1.5rem 1.5rem;
+  row-gap: 2.5rem;
+}
+
+.footer__copy {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  text-align: center;
+}
+
+.footer__copy a {
+  font-weight: var(--font-medium);
+}
 
 /*=============== SCROLL BAR ===============*/
 

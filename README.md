@@ -73,10 +73,10 @@
   <ul>
     <li>[✅] Header</li>
     <li>[✅] Navigation</li>
-    <li>[] Home</li>
+    <li>[✅] Home</li>
     <li>[] About</li>
     <li>[] Contact</li>
-    <li>[] Footer</li>
+    <li>[✅] Footer</li>
     <li>[✅] Dark Mode</li>
   </ul>
 </div>
