@@ -5,7 +5,7 @@
   /*========== Colors ==========*/
   --first-color: hsl(266, 89%, 61%);
   --text-color: hsl(252, 26%, 3%);
-  --body-color: hsl(0, 0%, 96%);
+  --body-color: hsl(0, 0%, 82%);
   --line-color: hsla(0, 0%, 10%, 0.4);
   --white-color: hsl(0, 0%, 100%);
 
@@ -242,7 +242,7 @@ button {
   content: "";
   width: 40px;
   height: 1px;
-  background-color: var(--text-color);
+  background-color: #fff;
   position: absolute;
   top: 50%;
   left: -4rem;
@@ -492,9 +492,9 @@ button .sun {
 }
 
 .home__social-link {
-  background-color: var(--text-color);
-  color: var(--body-color);
-  font-size: 1.25rem;
+  /* background-color: var(--text-color); */
+  color: var(--text-color);
+  font-size: 1.75rem;
   padding: 6px;
   display: grid;
   place-items: center;
@@ -502,7 +502,7 @@ button .sun {
 }
 
 .home__social-link:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .home__info {
@@ -614,7 +614,88 @@ button .sun {
 /*=============== ABOUT ===============*/
 
 /*=============== PROJECTS ===============*/
+/*.projects {
+  background-color: #123456;
+  transition: background-color 0.4s;
+}*/
 
+.projects__container {
+  row-gap: 2rem;
+}
+
+.projects__card {
+  padding: 1rem 1rem 2rem;
+  transition: background-color 0.4s;
+  background-color: var(--line-color);
+}
+
+.projects__image {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.projects__button {
+  position: absolute;
+  right: 1rem;
+  bottom: -1.5rem;
+  padding: 1rem;
+}
+
+.projects__content {
+  margin-bottom: 1.25rem;
+}
+
+.projects__subtitle {
+  position: relative;
+  display: inline-block;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  padding-left: 1.75rem;
+}
+
+.projects__subtitle::after {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background-color: var(--text-color);
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+.projects__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.75rem;
+}
+
+.projects__buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.projects__link {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  transition: color 0.4s;
+}
+
+.projects__link i {
+  font-size: 1rem;
+  color: var(--first-color);
+  transition: color 0.4s;
+}
+
+.projects__link,
+.projects__link i {
+  color: #627;
+}
 /*=============== CONTACT ===============*/
 
 /* Opaque placeholder */
