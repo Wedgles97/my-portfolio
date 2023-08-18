@@ -8,6 +8,7 @@
   --body-color: hsl(0, 0%, 82%);
   --line-color: hsla(0, 0%, 10%, 0.4);
   --white-color: hsl(0, 0%, 100%);
+  --blur-white: hsla(0, 0%, 0%, 0.75);
 
   /*========== Font and typography ==========*/
   --body-font: "Roboto", sans-serif;
@@ -106,6 +107,7 @@ button {
   --text-color: hsl(0, 0%, 100%);
   --body-color: hsl(252, 26%, 3%);
   --line-color: hsla(0, 0%, 89%, 0.4);
+  --blur-light: hsla(0, 0%, 0%, 0.75);
 }
 
 :root.dark-mode button .moon {
@@ -441,7 +443,23 @@ button .sun {
     transform: scale(1);
   }
 }
-/* Add shadow header */
+/* Add blur to header */
+.blur-header {
+  background-color: transparent;
+}
+
+.blur-header::after {
+  content: "";
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: var(--blur-light);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
 /* Active link */
 
@@ -483,7 +501,7 @@ button .sun {
 .home__social {
   height: max-content;
   position: absolute;
-  left: -3rem;
+  left: -3.5rem;
   top: 0;
   bottom: 0;
   margin: auto 0;
@@ -496,13 +514,37 @@ button .sun {
   color: var(--text-color);
   font-size: 1.75rem;
   padding: 6px;
+  border-radius: 50%;
   display: grid;
   place-items: center;
   transition: transform 0.3s;
 }
 
 .home__social-link:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  color: #fff;
+}
+
+.home__social-link:hover:nth-child(1) {
+  color: #0a66c2;
+}
+
+.home__social-link:hover:nth-child(2) {
+  color: #1e3050;
+}
+
+.home__social-link:hover:nth-child(3) {
+  background-clip: initial;
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #fdf497,
+    #fd5949,
+    #d6249f,
+    #285aeb
+  );
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .home__info {
@@ -589,7 +631,7 @@ button .sun {
 }
 
 .button:hover {
-  background-color: #627;
+  background-color: hsl(266, 89%, 56%);
 }
 
 .button__ghost {
@@ -782,10 +824,57 @@ button .sun {
 }
 
 /*=============== SCROLL BAR ===============*/
+/* width */
+::-webkit-scrollbar {
+  background: #22202c;
+  width: 0.6rem;
+}
 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--first-color);
+  border-radius: 0.5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(266, 89%, 56%);
+}
 /*=============== SCROLL UP ===============*/
 
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  border-radius: 50%;
+  background-color: var(--first-color);
+  display: inline-flex;
+  padding: 8px;
+  font-size: 1.25rem;
+  color: #fff;
+  z-index: var(--z-tooltip);
+  animation: scroll-up 3s infinite;
+  transition: bottom 0.4s, transform 0.4s, background-color 0.4s;
+}
+
+.scrollup:hover {
+  background: hsl(266, 89%, 56%);
+}
+
+/* animation scroll up */
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.5rem);
+  }
+}
+
 /* Show Scroll Up */
+.show-scroll {
+  bottom: 3rem;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
