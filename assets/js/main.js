@@ -1,8 +1,9 @@
 /*=========== SHOW MENU ===========*/
 const toggleMenu = function () {
   const btn = document.getElementById("nav-toggle"),
-    navMenu = document.getElementById("nav-menu"),
-    navToggle = document.querySelectorAll("nav .nav__toggle");
+    navToggle = document.querySelectorAll("nav .nav__toggle"),
+    links = document.querySelectorAll("nav ul li a"),
+    navMenu = document.querySelector(".nav__menu");
 
   btn.addEventListener("click", function () {
     const isActive = this.classList.contains("active");
@@ -22,18 +23,30 @@ const toggleMenu = function () {
       navMenu.classList.toggle("show-menu");
     });
   }
+
+  for (const link of links) {
+    link.addEventListener("click", function () {
+      navToggle.forEach((element) => {
+        element.classList.add("not-active");
+        element.classList.remove("active");
+      });
+
+      navMenu.classList.remove("show-menu");
+    });
+  }
 };
 
 toggleMenu();
 
 /* When clicking on a menu item, hide the menu. */
-const links = document.querySelectorAll("nav ul li a");
+/*const links = document.querySelectorAll("nav ul li a");
+const navMenu = document.querySelector(".nav__menu");
 
 for (const link of links) {
   link.addEventListener("click", function () {
     navMenu.classList.remove("show-menu");
   });
-}
+}*/
 
 /*=========== ADD BLUR TO HEADER ===========*/
 const blurHeader = () => {

@@ -462,8 +462,6 @@ button .sun {
   z-index: -1;
 }
 
-/* Active link */
-
 /*=============== HOME ===============*/
 .home__container {
   padding-top: 4rem;
@@ -570,7 +568,7 @@ button .sun {
   justify-content: center;
   align-items: center;
   font-size: var(--h2-font-size);
-  color: var(--line-color);
+  color: hsl(266, 89%, 56%);
   cursor: pointer;
   overflow: hidden;
 }
@@ -634,10 +632,10 @@ button .sun {
 }
 
 .button__ghost {
-  border: 3px solid #fff;
+  border: 3px solid var(--line-color);
   color: var(--first-color);
   padding: 0.5rem;
-  transition: border 0.4, color 0.4;
+  transition: border 0.4s, color 0.4s;
 }
 
 .button__ghost i {
@@ -645,7 +643,7 @@ button .sun {
 }
 
 .button__ghost:hover {
-  border: 3px solid #425;
+  border: 3px solid hsl(266, 89%, 56%);
 }
 /*=============== SKILLS ===============*/
 .skills__name {
@@ -789,7 +787,7 @@ button .sun {
 
 .projects__link,
 .projects__link i {
-  color: #627;
+  color: hsl(266, 89%, 56%);
 }
 /*=============== CONTACT ===============*/
 
@@ -816,7 +814,12 @@ button .sun {
 }
 
 .footer__copy a {
+  color: var(--first-color);
   font-weight: var(--font-medium);
+}
+
+.footer__copy a:hover {
+  color: hsl(266, 89%, 56%);
 }
 
 /*=============== SCROLL BAR ===============*/
