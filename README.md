@@ -74,10 +74,14 @@
     <li>[✅] Header</li>
     <li>[✅] Navigation</li>
     <li>[✅] Home</li>
-    <li>[] About</li>
-    <li>[] Contact</li>
+    <li>[✅] About</li>
+    <li>[✅] Projects</li>
+    <li>[] Contacts</li>
     <li>[✅] Footer</li>
     <li>[✅] Dark Mode</li>
+    <li>[✅] Breakpoint Small devices</li>
+    <li>[✅] Breakpoint Medium devices</li>
+    <li>[✅] Breakpoint Large devices</li>
   </ul>
 </div>
 
