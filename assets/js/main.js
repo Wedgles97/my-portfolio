@@ -74,3 +74,29 @@ const themeButton = document.querySelector("#theme-button");
 themeButton.addEventListener("click", () => {
   document.documentElement.classList.toggle("dark-mode");
 });
+
+function smoothScrollToTarget(target) {
+  const targetElement = document.querySelector(target);
+  const navHeight = document.querySelector("nav").offsetHeight;
+  const offset = 20;
+
+  const targetPosition =
+    targetElement.getBoundingClientRect().top +
+    window.scrollY -
+    navHeight -
+    offset;
+
+  window.scrollTo({
+    top: targetPosition,
+    behavior: "smooth",
+  });
+}
+
+// Aplicar rolagem suave usando delegação de eventos
+document.addEventListener("click", function (e) {
+  const link = e.target.closest(".nav__link, .home__scroll");
+  if (link) {
+    e.preventDefault();
+    smoothScrollToTarget(link.getAttribute("href"));
+  }
+});
