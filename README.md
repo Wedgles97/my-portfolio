@@ -76,7 +76,7 @@
     <li>[✅] Home</li>
     <li>[✅] About</li>
     <li>[✅] Projects</li>
-    <li>[] Contacts</li>
+    <li>[✅] Contacts</li>
     <li>[✅] Footer</li>
     <li>[✅] Dark Mode</li>
     <li>[✅] Breakpoint Small devices</li>
