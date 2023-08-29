@@ -57,6 +57,16 @@ themeButton.addEventListener("click", () => {
   document.documentElement.classList.toggle("dark-mode");
 });
 
+const darkMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const updateTheme = () => {
+  document.documentElement.classList.toggle(
+    "dark-mode",
+    darkMediaQuery.matches
+  );
+};
+updateTheme();
+darkMediaQuery.addEventListener("change", updateTheme);
+
 /* When clicking on any of the buttons in the navigation menu, the title of the button is visible */
 function smoothScrollToTarget(target) {
   const targetElement = document.querySelector(target);
