@@ -119,11 +119,6 @@ button {
   display: block;
 }
 
-/*========== 
-	Color changes in some parts of 
-	the website, in dark theme
-==========*/
-
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
@@ -170,7 +165,44 @@ button {
 }
 
 .main {
-  overflow: hidden; /* For animation ScrollReveal */
+  overflow: hidden;
+}
+
+/* icon social media */
+.social-link {
+  color: var(--text-color);
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: inline-grid;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+.linkedin:hover {
+  color: #0a66c2;
+}
+
+.github:hover {
+  color: #1e3050;
+}
+
+.instagram:hover {
+  background-clip: initial;
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #fdf497,
+    #fd5949,
+    #d6249f,
+    #285aeb
+  );
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /*=============== HEADER & NAV ===============*/
@@ -508,43 +540,6 @@ button .sun {
   row-gap: 1rem;
 }
 
-.home__social-link {
-  color: var(--text-color);
-  font-size: 1.75rem;
-  padding: 6px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  transition: transform 0.3s;
-}
-
-.home__social-link:hover {
-  transform: scale(1.1);
-  color: #fff;
-}
-
-.home__social-link:hover:nth-child(1) {
-  color: #0a66c2;
-}
-
-.home__social-link:hover:nth-child(2) {
-  color: #1e3050;
-}
-
-.home__social-link:hover:nth-child(3) {
-  background-clip: initial;
-  color: transparent;
-  background-image: linear-gradient(
-    to right,
-    #fdf497,
-    #fd5949,
-    #d6249f,
-    #285aeb
-  );
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
 .home__info {
   margin-top: 1rem;
 }
@@ -631,41 +626,42 @@ button .sun {
 }
 
 /*=============== SKILLS ===============*/
-.skills__name {
-  font-weight: var(--font-regular);
-  font-size: var(--h2-font-size);
-}
-
-.skills__name::before,
-.skills__name::after {
-  margin: 0 0.5rem;
-  color: var(--first-color);
-  font-weight: var(--font-bold);
-}
-
-.skills__name::before {
-  content: "<";
-}
-
-.skills__name::after {
-  content: "/>";
-}
-
 .skills__list {
   display: flex;
   color: var(--text-color);
   flex-direction: row;
   justify-content: center;
   column-gap: 2.5rem;
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 .skills__item {
+  width: 48px;
+  height: 48px;
   transition: transform 0.3s;
 }
 
+.skills__item img[alt] {
+  font-size: 8px;
+}
+
+.skills__item {
+  transition: transform 0.3s ease;
+}
+
 .skills__item:hover {
-  transform: scale(1.2);
+  animation: shimmer 0.5s infinite;
+}
+
+/* animate skills hover */
+@keyframes shimmer {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 /*=============== ABOUT ===============*/
@@ -706,19 +702,19 @@ button .sun {
 }
 
 .projects__image {
+  display: inline-block; /* ou display: inline-flex; */
   position: relative;
   margin-bottom: 0.75rem;
 }
 
-.projects__button {
-  position: absolute;
-  right: 1rem;
-  bottom: -1.5rem;
-  padding: 1rem;
+.projects__img {
+  max-width: 100%;
+  height: auto;
 }
 
 .projects__content {
   margin-bottom: 1.25rem;
+  position: relative;
 }
 
 .projects__subtitle {
@@ -741,15 +737,31 @@ button .sun {
   left: 0;
 }
 
+.projects__technologies {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 0;
+  right: 35px;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+}
+
 .projects__title {
   font-size: var(--h3-font-size);
   margin-bottom: 0.75rem;
+}
+
+.projects__description {
+  height: 70px;
 }
 
 .projects__buttons {
   display: flex;
   align-items: center;
   column-gap: 1rem;
+  height: 30px;
 }
 
 .projects__link {
@@ -772,11 +784,6 @@ button .sun {
 .projects__link i {
   color: hsl(266, 89%, 56%);
 }
-/*=============== CONTACT ===============*/
-
-/* Opaque placeholder */
-
-/* Move label up & sticky label */
 
 /*=============== FOOTER ===============*/
 .footer {
@@ -802,43 +809,6 @@ button .sun {
 .footer__description a {
   color: var(--first-color);
   font-weight: var(--font-semi-bold);
-}
-
-.footer__social-link {
-  color: var(--text-color);
-  font-size: 1.75rem;
-  padding: 6px;
-  border-radius: 50%;
-  display: inline-grid;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.footer__social-link:hover {
-  transform: scale(1.1);
-  color: #fff;
-}
-
-.footer__social-link:hover:nth-child(1) {
-  color: #0a66c2;
-}
-
-.footer__social-link:hover:nth-child(2) {
-  color: #1e3050;
-}
-
-.footer__social-link:hover:nth-child(3) {
-  background-clip: initial;
-  color: transparent;
-  background-image: linear-gradient(
-    to right,
-    #fdf497,
-    #fd5949,
-    #d6249f,
-    #285aeb
-  );
-  -webkit-background-clip: text;
-  color: transparent;
 }
 
 .footer__copy {
@@ -981,6 +951,10 @@ button .sun {
     font-size: var(--normal-font-size);
   }
 
+  .arrow-down {
+    padding-top: 2rem;
+  }
+
   .home__container {
     grid-template-columns: repeat(2, 460px);
     gap: 2rem 4rem;
@@ -1026,11 +1000,6 @@ button .sun {
   .home__social {
     left: initial;
     right: -6rem;
-  }
-
-  .home__social-link {
-    font-size: 2rem;
-    padding: 0.5rem;
   }
 
   .skills__container {
