@@ -9,6 +9,7 @@
   --line-color: hsla(0, 0%, 10%, 0.4);
   --white-color: hsl(0, 0%, 100%);
   --blur-effect: hsla(0, 0%, 0%, 0.75);
+  --hover-effect: hsl(266, 89%, 56%);
 
   /*========== Font and typography ==========*/
   --body-font: "Roboto", sans-serif;
@@ -18,7 +19,6 @@
   --h3-font-size: 1.125rem;
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -40,7 +40,6 @@
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
     --small-font-size: 0.875rem;
-    --smaller-font-size: 0.813rem;
   }
 }
 
@@ -99,8 +98,6 @@ button {
 .change-theme {
   display: flex;
   font-size: 1.25rem;
-  color: var(--first-color);
-  cursor: pointer;
   transition: color 0.3s;
 }
 /*========== Variables Dark theme ==========*/
@@ -205,6 +202,10 @@ button {
   color: transparent;
 }
 
+.hover-link:hover {
+  color: var(--hover-effect);
+}
+
 /*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
@@ -230,7 +231,6 @@ button {
   font-size: 1.31rem;
   color: var(--text-color);
   font-weight: var(--font-bold);
-  cursor: pointer;
 }
 
 .nav__logo strong {
@@ -476,6 +476,7 @@ button .sun {
     transform: scale(1);
   }
 }
+
 /* Add blur to header */
 .blur-header {
   background-color: transparent;
@@ -564,7 +565,6 @@ button .sun {
   align-items: center;
   font-size: var(--h2-font-size);
   color: hsl(266, 89%, 56%);
-  cursor: pointer;
   overflow: hidden;
 }
 
@@ -622,13 +622,12 @@ button .sun {
 }
 
 .button:hover {
-  background-color: hsl(266, 89%, 56%);
+  background-color: var(--hover-effect);
 }
 
 /*=============== SKILLS ===============*/
 .skills__list {
   display: flex;
-  color: var(--text-color);
   flex-direction: row;
   justify-content: center;
   column-gap: 2.5rem;
@@ -681,7 +680,6 @@ button .sun {
 
 .about__description {
   position: relative;
-  color: var(--text-color);
   margin-bottom: 1.5rem;
 }
 
@@ -697,12 +695,12 @@ button .sun {
 
 .projects__card {
   padding: 1rem 1rem 2rem;
-  border-bottom: 1px solid var(--line-color);
+
   display: grid;
 }
 
 .projects__image {
-  display: inline-block; /* ou display: inline-flex; */
+  display: inline-block;
   position: relative;
   margin-bottom: 0.75rem;
 }
@@ -722,7 +720,6 @@ button .sun {
   display: inline-block;
   font-size: var(--small-font-size);
   font-weight: var(--font-medium);
-  color: var(--text-color);
   margin-bottom: 0.75rem;
   padding-left: 1.75rem;
 }
@@ -742,10 +739,10 @@ button .sun {
   height: 16px;
   width: 16px;
   top: 0;
-  right: 35px;
+  right: 0;
   display: flex;
   align-items: center;
-  color: var(--text-color);
+  justify-content: flex-end;
 }
 
 .projects__title {
@@ -768,7 +765,6 @@ button .sun {
   display: flex;
   align-items: center;
   column-gap: 0.25rem;
-  color: var(--text-color);
   font-size: var(--small-font-size);
   font-weight: var(--font-medium);
   transition: color 0.4s;
@@ -776,13 +772,12 @@ button .sun {
 
 .projects__link i {
   font-size: 1rem;
-  color: var(--first-color);
   transition: color 0.4s;
 }
 
 .projects__link,
 .projects__link i {
-  color: hsl(266, 89%, 56%);
+  color: var(--first-color);
 }
 
 /*=============== FOOTER ===============*/
@@ -798,17 +793,11 @@ button .sun {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
 .footer__description {
   padding: 0 2rem 1rem;
-}
-
-.footer__description a {
-  color: var(--first-color);
-  font-weight: var(--font-semi-bold);
 }
 
 .footer__copy {
@@ -817,13 +806,10 @@ button .sun {
   text-align: center;
 }
 
+.footer__description a,
 .footer__copy a {
   color: var(--first-color);
-  font-weight: var(--font-medium);
-}
-
-.footer__copy a:hover {
-  color: hsl(266, 89%, 56%);
+  font-weight: var(--font-semi-bold);
 }
 
 /*=============== SCROLL BAR ===============*/
@@ -841,7 +827,7 @@ button .sun {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(266, 89%, 56%);
+  background: var(--hover-effect);
 }
 /*=============== SCROLL UP ===============*/
 
@@ -861,7 +847,7 @@ button .sun {
 }
 
 .scrollup:hover {
-  background: hsl(266, 89%, 56%);
+  background: var(--hover-effect);
 }
 
 /* animation scroll up */
@@ -918,7 +904,7 @@ button .sun {
   }
 
   .section {
-    padding-block: 1rem 2rem;
+    padding-block: 1rem 1rem;
   }
 
   .section__title-1::after,
@@ -1018,7 +1004,6 @@ button .sun {
 
   .projects__container {
     grid-template-columns: repeat(3, 352px);
-    padding-block: 3rem 1rem;
   }
 
   .projects__card {
@@ -1027,9 +1012,5 @@ button .sun {
 
   .projects__image {
     margin-bottom: 1rem;
-  }
-
-  .projects__button {
-    right: 1.25rem;
   }
 }
