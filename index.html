@@ -154,22 +154,24 @@
                 <i class="ri-github-fill"></i>
               </a>
 
-              <a
+              <!-- <a
                 href="https://www.instagram.com/wedgles_/"
                 target="_blank"
                 class="social-link instagram"
                 aria-label="Perfil do Instagram de Wedgles Elinaldo"
               >
                 <i class="ri-instagram-line"></i>
-              </a>
+              </a> -->
             </div>
           </div>
 
           <div class="home__info">
             <p class="home__description">
-              <b>Desenvolvedor Front-End</b> com habilidades em HTML, CSS e
-              JavaScript, experiente em criar interfaces de usuário atraentes e
-              funcionais.
+              Como <b>Desenvolvedor Front-End</b>, minha motivação e paixão
+              residem em criar experiências digitais envolventes e excepcionais.
+              Com formação em Análise e Desenvolvimento de Sistemas pela
+              Universidade UNINASSAU, obtive habilidades fundamentais para o
+              desenvolvimento de interfaces web e mobile.
             </p>
           </div>
         </div>
@@ -197,6 +199,14 @@
                 width="48px"
                 height="48px"
                 alt="JavaScript Icon"
+              />
+            </li>
+            <li class="skills__item">
+              <img
+                src="./assets/img/icons/bootstrap-i.svg"
+                width="48px"
+                height="48px"
+                alt="Bootstrap Icon"
               />
             </li>
             <li class="skills__item">
@@ -272,6 +282,72 @@
         </h2>
 
         <div class="projects__container container grid">
+          <!-- !Projeto PH Suplementos -->
+          <article class="projects__card">
+            <div class="projects__image">
+              <img
+                src="assets/img/projects/project-phsuplements.png"
+                alt="Projeto PH Suplementos"
+                class="projects__img"
+              />
+            </div>
+
+            <div class="projects__content">
+              <h3 class="projects__subtitle">Website</h3>
+              <div class="projects__technologies">
+                <img
+                  src="./assets/img/icons/react-i.svg"
+                  width="48px"
+                  height="48px"
+                  alt="HTML5 Icon"
+                />
+                <img
+                  src="./assets/img/icons/bootstrap-i.svg"
+                  width="48px"
+                  height="48px"
+                  alt="JavaScript Icon"
+                />
+                <img
+                  src="./assets/img/icons/js-i.svg"
+                  width="48px"
+                  height="48px"
+                  alt="JavaScript Icon"
+                />
+                <img
+                  src="./assets/img/icons/css3-i.svg"
+                  width="48px"
+                  height="48px"
+                  alt="CSS3 Icon"
+                />
+              </div>
+
+              <h2 class="projects__title">PH Suplementos</h2>
+
+              <p class="projects__description">
+                Plataforma de vendas de suplementos alimentares desenvolvida com
+                React.js e Bootstrap, adotando a abordagem mobile-first para
+                garantir uma experiência otimizada em dispositivos móveis.
+              </p>
+            </div>
+
+            <div class="projects__buttons">
+              <a
+                href="https://github.com/geanderson-062/Ph-suplementos"
+                target="_blank"
+                class="projects__link hover-link"
+              >
+                <i class="ri-github-line"></i> Código Fonte
+              </a>
+              <a
+                href="https://ph-suplementos.vercel.app/"
+                target="_blank"
+                class="projects__link hover-link"
+              >
+                <i class="ri-link"></i> Demonstração
+              </a>
+            </div>
+          </article>
+
           <!-- !Projeto Portfolio -->
           <article class="projects__card">
             <div class="projects__image">
@@ -548,27 +624,28 @@
               <i class="ri-github-fill"></i>
             </a>
 
-            <a
+            <!-- <a
               href="https://www.instagram.com/wedgles_/"
               target="_blank"
               class="social-link instagram"
               aria-label="Perfil do Instagram de Wedgles Elinaldo"
             >
               <i class="ri-instagram-line"></i>
-            </a>
+            </a> -->
           </div>
         </div>
-        <span class="footer__copy">
-          &#169; 2023
+        <span class="footer__copy" id="currentYear">
+          &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
           <a
             href="https://www.linkedin.com/in/wedgles-elinaldo97/"
             target="_blank"
             class="hover-link"
             aria-label="Perfil do LinkedIn de Wedgles Elinaldo"
-          >
-            Wedgles Elinaldo.
-          </a>
-          Todos os direitos reservados
+            >Wedgles Elinaldo</a
+          >. Todos os direitos reservados.
         </span>
       </div>
     </footer>
