@@ -68,6 +68,7 @@ updateTheme();
 darkMediaQuery.addEventListener("change", updateTheme);
 
 /* When clicking on any of the buttons in the navigation menu, the title of the button is visible */
+// Função para rolar suavemente para o alvo
 function smoothScrollToTarget(target) {
   const targetElement = document.querySelector(target);
   const navHeight = document.querySelector("nav").offsetHeight;
@@ -84,6 +85,19 @@ function smoothScrollToTarget(target) {
   });
 }
 
+// Função para iniciar o download do arquivo
+function downloadFile(event) {
+  event.preventDefault();
+  var fileUrl = this.getAttribute("href");
+  var downloadLink = document.createElement("a");
+  downloadLink.href = fileUrl;
+  downloadLink.download = "Wedgles-CV.pdf";
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+}
+
+// Adiciona os event listeners para ambos os casos
 document.addEventListener("click", (e) => {
   const link = e.target.closest(".nav__link, .home__scroll");
   if (link) {
@@ -91,3 +105,8 @@ document.addEventListener("click", (e) => {
     smoothScrollToTarget(link.getAttribute("href"));
   }
 });
+
+document.getElementById("downloadLink").addEventListener("click", downloadFile);
+document
+  .getElementById("downloadLink")
+  .addEventListener("touchstart", downloadFile);
